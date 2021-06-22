@@ -4,10 +4,10 @@ import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static com.gt.jfp.ExceptionHandlerFactory.TryCatchWithoutResult;
+import static com.gt.jfp.construct.exception.ExceptionHandlerFactory.TryCatchWithoutResult;
 import static org.assertj.core.api.Assertions.assertThat;
 
-class TryCatchWithoutResultTest {
+class TryCatchWithoutResultImplTest {
     @Test
     public void shouldExecuteCodeInsideTryCatch() {
         //given
@@ -31,7 +31,7 @@ class TryCatchWithoutResultTest {
         TryCatchWithoutResult(() -> {
             x.set(x.get() + 1);
             throw new RuntimeException();
-        }).onException(() -> x.set(x.get() + 1)).run();
+        }).onException(e -> x.set(x.get() + 1)).run();
 
         //Then
         assertThat(x.get()).isEqualTo(7);
@@ -46,7 +46,7 @@ class TryCatchWithoutResultTest {
         TryCatchWithoutResult(() -> {
             x.set(x.get() + 1);
             throw new RuntimeException();
-        }).onException(() -> x.set(x.get() + 1))
+        }).onException(e -> x.set(x.get() + 1))
                 .withFinally(() -> x.set(x.get() + 1))
                 .run();
 
@@ -62,7 +62,7 @@ class TryCatchWithoutResultTest {
         //When
         TryCatchWithoutResult(() -> {
             x.set(x.get() + 1);
-        }).onException(() -> x.set(x.get() + 1))
+        }).onException(e -> x.set(x.get() + 1))
                 .withFinally(() -> x.set(x.get() + 1))
                 .run();
 

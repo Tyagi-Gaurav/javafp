@@ -1,10 +1,33 @@
 plugins {
     // Apply the java-library plugin to add support for Java Library
     id 'java-library'
+    id 'jacoco'
+    id 'com.github.spotbugs' version '4.7.1'
 }
 
 repositories {
     mavenCentral()
+}
+
+jacoco {
+    toolVersion = "0.8.6"
+    reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
+}
+
+spotbugs {
+    toolVersion = '4.2.3'
+    ignoreFailures = false
+    excludeFilter = file("gradle/spotbugs/exclusions.xml")
+}
+
+spotbugsMain {
+    reports {
+        html {
+            enabled = true
+            destination = file("$buildDir/reports/spotbugs/main/spotbugs.html")
+            stylesheet = 'fancy-hist.xsl'
+        }
+    }
 }
 
 dependencies {
@@ -19,4 +42,14 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination layout.buildDirectory.dir('jacocoHtml').get().asFile
+    }
 }

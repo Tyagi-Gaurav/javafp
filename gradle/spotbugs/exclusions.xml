@@ -1,0 +1,14 @@
+<FindBugsFilter>
+    <Match>
+        <Or>
+            <And>
+                <Class name="com.gt.jfp.construct.exception.ExceptionHandlerFactory"/>
+                <Method name="TryCatchWithResult"/>
+            </And>
+            <And>
+                <Class name="com.gt.jfp.construct.exception.ExceptionHandlerFactory"/>
+                <Method name="TryCatchWithoutResult"/>
+            </And>
+        </Or>
+    </Match>
+</FindBugsFilter>
