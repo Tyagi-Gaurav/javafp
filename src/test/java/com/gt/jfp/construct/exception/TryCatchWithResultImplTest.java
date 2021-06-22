@@ -1,6 +1,5 @@
-package com.gt.jfp.construct;
+package com.gt.jfp.construct.exception;
 
-import com.gt.jfp.construct.exception.TryCatchWithResultImpl;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.atomic.AtomicInteger;

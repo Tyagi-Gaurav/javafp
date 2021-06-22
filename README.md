@@ -12,3 +12,13 @@ return value.
           .withFinally(() -> // Handle Finally)
           .run();
   ```
+
+### Try Catch With return Value
+* Use this block when you like to execute a routine and also return a result.
+  ```
+  TryCatchWithResult(() -> {
+            // Do Something and Return result
+        }).onExceptionReturn(() -> //Do Something and Return)
+          .withFinally(() -> // Handle Finally)
+          .run();
+  ```

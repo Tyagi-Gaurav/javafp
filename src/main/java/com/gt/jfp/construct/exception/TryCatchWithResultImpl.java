@@ -9,7 +9,7 @@ public class TryCatchWithResultImpl<T> implements TryCatchWithResult<T> {
     private Supplier<Void> finallySupplier;
     private Supplier<T> exceptionReturnSupplier;
 
-    public TryCatchWithResultImpl(Supplier<T> supplier) {
+    TryCatchWithResultImpl(Supplier<T> supplier) {
         this.supplier = supplier;
     }
 

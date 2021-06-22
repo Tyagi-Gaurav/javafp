@@ -1,4 +1,4 @@
-package com.gt.jfp.construct;
+package com.gt.jfp.construct.exception;
 
 import org.junit.jupiter.api.Test;
 

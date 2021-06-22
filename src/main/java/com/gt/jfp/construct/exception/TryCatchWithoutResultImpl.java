@@ -7,7 +7,7 @@ public class TryCatchWithoutResultImpl implements TryCatchWithoutResult {
     private Consumer<Exception> exception;
     private Runnable finalRoutine;
 
-    public TryCatchWithoutResultImpl(Runnable routine) {
+    TryCatchWithoutResultImpl(Runnable routine) {
         this.routine = routine;
     }
 
