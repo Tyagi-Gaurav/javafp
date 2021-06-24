@@ -11,4 +11,10 @@
             </And>
         </Or>
     </Match>
+    <Match>
+        <Class name="~.*\.*Test*" />
+        <Not>
+            <Bug code="IJU" />
+        </Not>
+    </Match>
 </FindBugsFilter>

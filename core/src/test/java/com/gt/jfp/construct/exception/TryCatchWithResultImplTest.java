@@ -9,7 +9,7 @@ import static org.assertj.core.api.Assertions.catchThrowable;
 
 class TryCatchWithResultImplTest {
     @Test
-    public void shouldExecuteCodeInsideTryCatch() {
+    void shouldExecuteCodeInsideTryCatch() {
         //When
         Integer result = new TryCatchWithResultImpl<>(() -> 7).run();
 
@@ -18,7 +18,7 @@ class TryCatchWithResultImplTest {
     }
 
     @Test
-    public void shouldBeAbleToReturnCodeFromException() {
+    void shouldBeAbleToReturnCodeFromException() {
         //When
         Integer result = new TryCatchWithResultImpl<>(() -> {
             int i = 2;
@@ -38,7 +38,7 @@ class TryCatchWithResultImplTest {
     }
 
     @Test
-    public void shouldBeAbleToRethrowException() {
+    void shouldBeAbleToRethrowException() {
         //When
         TryCatchWithResultImpl<Integer> integerTryCatchWithResult = new TryCatchWithResultImpl<>(() -> {
             int i = 2;
@@ -61,7 +61,7 @@ class TryCatchWithResultImplTest {
     }
 
     @Test
-    public void shouldExecuteCodeInsideFinallyBlock() {
+    void shouldExecuteCodeInsideFinallyBlock() {
         //given
         AtomicInteger x = new AtomicInteger(5);
 

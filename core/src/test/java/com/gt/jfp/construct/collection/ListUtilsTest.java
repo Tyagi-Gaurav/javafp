@@ -15,7 +15,7 @@ import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException
 class ListUtilsTest {
 
     @Nested
-    private static class HeadTest {
+    class HeadTest {
         @ParameterizedTest
         @NullAndEmptySource
         void headOfEmptyListShouldThrowException(List actual) {
@@ -34,7 +34,7 @@ class ListUtilsTest {
     }
 
     @Nested
-    private static class TailTest {
+    class TailTest {
         @ParameterizedTest
         @NullAndEmptySource
         void tailOfEmptyListShouldThrowException(List input) {
@@ -49,7 +49,7 @@ class ListUtilsTest {
     }
 
     @Nested
-    private static class InitTest {
+    class InitTest {
         @Test
         void InitOfEmptyListShouldThrowException() {
             assertThatIllegalArgumentException()
@@ -68,7 +68,7 @@ class ListUtilsTest {
     }
 
     @Nested
-    private static class ReverseTest {
+    class ReverseTest {
         @Test
         void ReverseOfEmptyListShouldBeEmptyList() {
             assertThat(ListUtils.Reverse(Collections.emptyList()))
@@ -85,7 +85,7 @@ class ListUtilsTest {
     }
 
     @Nested
-    private static class TakeTest {
+    class TakeTest {
         @ParameterizedTest
         @NullAndEmptySource
         void TakeOfEmptyListShouldBeEmptyList(List input) {
@@ -107,7 +107,7 @@ class ListUtilsTest {
     }
 
     @Nested
-    private static class DropTest {
+    class DropTest {
         @ParameterizedTest
         @NullAndEmptySource
         void DropOfEmptyListShouldBeEmptyList(List input) {
@@ -129,7 +129,7 @@ class ListUtilsTest {
     }
 
     @Nested
-    private static class SumTest {
+    class SumTest {
         @ParameterizedTest
         @NullAndEmptySource
         void SumOfEmptyListShouldBeZero(List input) {
