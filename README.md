@@ -1,5 +1,6 @@
 # javafp
-[![Java CI with Gradle](https://github.com/Tyagi-Gaurav/javafp/actions/workflows/gradle.yml/badge.svg)](https://github.com/Tyagi-Gaurav/javafp/actions/workflows/gradle.yml)
+[![Gradle CI](https://github.com/Tyagi-Gaurav/javafp/actions/workflows/gradle.yml/badge.svg)](https://github.com/Tyagi-Gaurav/javafp/actions/workflows/gradle.yml)
+[![Sonar](https://github.com/Tyagi-Gaurav/javafp/actions/workflows/sonar.yml/badge.svg)](https://github.com/Tyagi-Gaurav/javafp/actions/workflows/sonar.yml)
 
 ## List Operations
 

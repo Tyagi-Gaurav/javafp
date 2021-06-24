@@ -4,14 +4,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
-import java.util.function.BiFunction;
-import java.util.function.BinaryOperator;
-import java.util.function.ToDoubleFunction;
 import java.util.stream.Collectors;
-import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 
 public class ListUtils {
+
+    private ListUtils() {}
+
     /**
      *
      * @param input
@@ -73,7 +72,7 @@ public class ListUtils {
      * @return
      */
     public static <T> List<T> Reverse(List<T> input) {
-        if (input.size() == 0)
+        if (input.isEmpty())
             return Collections.emptyList();
         else {
             List<T> output = new ArrayList<>(Reverse(tailOf(input)));
