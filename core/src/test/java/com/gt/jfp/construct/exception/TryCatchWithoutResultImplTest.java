@@ -9,7 +9,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class TryCatchWithoutResultImplTest {
     @Test
-    public void shouldExecuteCodeInsideTryCatch() {
+    void shouldExecuteCodeInsideTryCatch() {
         //given
         AtomicInteger x = new AtomicInteger(5);
 
@@ -23,7 +23,7 @@ class TryCatchWithoutResultImplTest {
     }
 
     @Test
-    public void shouldExecuteCodeInsideException() {
+    void shouldExecuteCodeInsideException() {
         //given
         AtomicInteger x = new AtomicInteger(5);
 
@@ -38,7 +38,7 @@ class TryCatchWithoutResultImplTest {
     }
 
     @Test
-    public void shouldExecuteCodeInsideFinallyBlock() {
+    void shouldExecuteCodeInsideFinallyBlock() {
         //given
         AtomicInteger x = new AtomicInteger(5);
 
@@ -55,7 +55,7 @@ class TryCatchWithoutResultImplTest {
     }
 
     @Test
-    public void shouldExecuteCodeInsideFinallyWhenNoExceptionThrown() {
+    void shouldExecuteCodeInsideFinallyWhenNoExceptionThrown() {
         //given
         AtomicInteger x = new AtomicInteger(5);
 
