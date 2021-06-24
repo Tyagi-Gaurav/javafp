@@ -8,3 +8,6 @@
  */
 
 rootProject.name = 'javafp'
+include 'examples'
+include 'core'
+

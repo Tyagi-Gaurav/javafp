@@ -30,26 +30,3 @@ spotbugsMain {
     }
 }
 
-dependencies {
-    testImplementation "org.junit.jupiter:junit-jupiter-api:5.7.1"
-    testImplementation "org.junit.jupiter:junit-jupiter-engine:5.7.1"
-    testImplementation "org.junit.platform:junit-platform-commons:1.7.1"
-    testImplementation "org.junit.platform:junit-platform-runner:1.7.1"
-    testImplementation "org.junit.platform:junit-platform-suite-api:1.7.1"
-
-    testImplementation "org.assertj:assertj-core:3.15.0"
-}
-
-test {
-    useJUnitPlatform()
-    finalizedBy jacocoTestReport
-}
-
-jacocoTestReport {
-    dependsOn test
-    reports {
-        xml.enabled false
-        csv.enabled false
-        html.destination layout.buildDirectory.dir('jacocoHtml').get().asFile
-    }
-}
