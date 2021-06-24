@@ -13,11 +13,6 @@
 | Drop While  | Return the elements of list after skipping the first `x` elements  |
 | Sum  | Compute the sum of all the elements of the list  |
 
-### Head
-Returns the head of the list
-
-### Tail
-
 ## Exceptions
 
 ### Try Catch With no return Value
