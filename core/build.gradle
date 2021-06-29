@@ -15,6 +15,8 @@ sonarqube {
         property "sonar.projectKey", "Tyagi-Gaurav_javafp"
         property "sonar.organization", "tyagi-gaurav"
         property "sonar.host.url", "https://sonarcloud.io"
+        property "sonar.java.coveragePlugin", "jacoco"
+        property "sonar.coverage.jacoco.xmlReportPaths", "build/customJacocoReportDir/test/jacocoTestReport.xml"
     }
 }
 
@@ -67,8 +69,18 @@ test {
 
 jacocoTestReport {
     dependsOn test
+
+    afterEvaluate {
+        classDirectories.setFrom(files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: [
+                    "com/gt/jfp/construct/domain/Triple.class",
+                    "com/gt/jfp/construct/domain/Tuple.class",
+            ])
+        }))
+    }
+
     reports {
-        xml.enabled false
+        xml.enabled true
         csv.enabled false
         html.destination layout.buildDirectory.dir('jacocoHtml').get().asFile
     }

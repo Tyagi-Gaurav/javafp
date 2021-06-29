@@ -2,6 +2,13 @@
 [![Gradle CI](https://github.com/Tyagi-Gaurav/javafp/actions/workflows/gradle.yml/badge.svg)](https://github.com/Tyagi-Gaurav/javafp/actions/workflows/gradle.yml)
 [![Sonar](https://github.com/Tyagi-Gaurav/javafp/actions/workflows/sonar.yml/badge.svg)](https://github.com/Tyagi-Gaurav/javafp/actions/workflows/sonar.yml)
 
+## Types
+### Tuple
+Set of two different types
+
+### Triple
+Set of three different types
+
 ## List Operations
 
 | Operation     | Description     |  
@@ -13,6 +20,8 @@
 | Take While  | Return the first `x` elements of a list  |
 | Drop While  | Return the elements of list after skipping the first `x` elements  |
 | Sum  | Compute the sum of all the elements of the list  |
+| Zip  | Zips together elements of two lists  |
+| Zip3  | Zips together elements of three lists  |
 
 ## Exceptions
 
