@@ -19,8 +19,8 @@ public class Tuple<A, B> {
         return second;
     }
 
-    public static <A, B> Tuple of(A a, B b) {
-        return new Tuple(a, b);
+    public static <A, B> Tuple<A, B> of(A a, B b) {
+        return new Tuple<>(a, b);
     }
 
     @Override

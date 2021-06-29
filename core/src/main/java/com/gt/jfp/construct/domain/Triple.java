@@ -25,8 +25,8 @@ public class Triple<A, B, C> {
         return third;
     }
 
-    public static <A, B, C> Triple of(A a, B b, C c) {
-        return new Triple(a, b, c);
+    public static <A, B, C> Triple<A, B, C> of(A a, B b, C c) {
+        return new Triple<>(a, b, c);
     }
 
     @Override

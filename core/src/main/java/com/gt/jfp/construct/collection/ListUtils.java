@@ -145,7 +145,7 @@ public class ListUtils {
      */
     public static <A, B> List<Tuple<A, B>> zip(List<A> aList, List<B> bList) {
         return IntStream.range(0, Math.min(aList.size(), bList.size()))
-                .mapToObj(i -> new Tuple<>(aList.get(i), bList.get(i)))
+                .mapToObj(i -> Tuple.of(aList.get(i), bList.get(i)))
                 .collect(Collectors.toList());
     }
 
@@ -166,7 +166,7 @@ public class ListUtils {
         List<Tuple<A, B>> zippedList = zip(aList, bList);
 
         return IntStream.range(0, Math.min(zippedList.size(), cList.size()))
-                .mapToObj(i -> new Triple<>(zippedList.get(i).getFirst(),
+                .mapToObj(i -> Triple.of(zippedList.get(i).getFirst(),
                         zippedList.get(i).getSecond(), cList.get(i)))
                 .collect(Collectors.toList());
     }
