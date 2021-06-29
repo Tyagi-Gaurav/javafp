@@ -1,5 +1,7 @@
 package com.gt.jfp.construct.collection;
 
+import com.gt.jfp.construct.domain.Tuple;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -50,7 +52,7 @@ public class ListUtils {
      * @return Everything but the last element of the list
      * @throws IllegalArgumentException if the input is empty or null
      */
-    public static <T> List<T> InitOf(List<T> input) {
+    public static <T> List<T> initOf(List<T> input) {
         if (Objects.isNull(input) || input.isEmpty()) {
             throw new IllegalArgumentException();
         }
@@ -71,11 +73,11 @@ public class ListUtils {
      * @param <T>
      * @return
      */
-    public static <T> List<T> Reverse(List<T> input) {
+    public static <T> List<T> reverse(List<T> input) {
         if (input.isEmpty())
             return Collections.emptyList();
         else {
-            List<T> output = new ArrayList<>(Reverse(tailOf(input)));
+            List<T> output = new ArrayList<>(reverse(tailOf(input)));
             output.add(headOf(input));
             return output;
         }
@@ -89,7 +91,7 @@ public class ListUtils {
      * @param <T>
      * @return
      */
-    public static <T> List<T> Take(int count, List<T> input) {
+    public static <T> List<T> take(int count, List<T> input) {
         if (input == null || input.isEmpty()) {
             return Collections.emptyList();
         }
@@ -107,7 +109,7 @@ public class ListUtils {
      * @param <T>
      * @return
      */
-    public static <T> List<T> Drop(int count, List<T> input) {
+    public static <T> List<T> drop(int count, List<T> input) {
         if (input == null || input.isEmpty()) {
             return Collections.emptyList();
         }
@@ -123,11 +125,26 @@ public class ListUtils {
      * @param <T>
      * @return
      */
-    public static <T extends Number> double Sum(List<T> input) {
+    public static <T extends Number> double sum(List<T> input) {
         if (input == null || input.isEmpty()) {
             return 0;
         }
 
         return input.stream().mapToDouble(Number::doubleValue).sum();
+    }
+
+    /**
+     * zips together 2 lists to return a list of tuples.
+     *
+     * @param aList
+     * @param bList
+     * @param <A>
+     * @param <B>
+     * @return
+     */
+    public static <A, B> List<Tuple<A, B>> zip(List<A> aList, List<B> bList) {
+        return IntStream.range(0, Math.min(aList.size(), bList.size()))
+                .mapToObj(i -> new Tuple<>(aList.get(i), bList.get(i)))
+                .collect(Collectors.toList());
     }
 }
