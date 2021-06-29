@@ -1,5 +1,6 @@
 package com.gt.jfp.construct.collection;
 
+import com.gt.jfp.construct.domain.Triple;
 import com.gt.jfp.construct.domain.Tuple;
 
 import java.util.ArrayList;
@@ -140,11 +141,33 @@ public class ListUtils {
      * @param bList
      * @param <A>
      * @param <B>
-     * @return
+     * @return List<Tuple>
      */
     public static <A, B> List<Tuple<A, B>> zip(List<A> aList, List<B> bList) {
         return IntStream.range(0, Math.min(aList.size(), bList.size()))
                 .mapToObj(i -> new Tuple<>(aList.get(i), bList.get(i)))
+                .collect(Collectors.toList());
+    }
+
+    /**
+     * Zips together 3 lists
+     *
+     * @param aList
+     * @param bList
+     * @param cList
+     * @param <A>
+     * @param <B>
+     * @param <C>
+     * @return List<Triple>
+     */
+    public static <A, B, C> List<Triple<A, B, C>> zip3(List<A> aList,
+                                                      List<B> bList,
+                                                      List<C> cList) {
+        List<Tuple<A, B>> zippedList = zip(aList, bList);
+
+        return IntStream.range(0, Math.min(zippedList.size(), cList.size()))
+                .mapToObj(i -> new Triple<>(zippedList.get(i).getFirst(),
+                        zippedList.get(i).getSecond(), cList.get(i)))
                 .collect(Collectors.toList());
     }
 }

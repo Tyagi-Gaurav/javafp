@@ -3,20 +3,20 @@ package com.gt.jfp.construct.domain;
 import java.util.Objects;
 
 public class Tuple<A, B> {
-    A a;
-    B b;
+    A first;
+    B second;
 
-    public Tuple(A a, B b) {
-        this.a = a;
-        this.b = b;
+    public Tuple(A first, B b) {
+        this.first = first;
+        this.second = b;
     }
 
-    public A getA() {
-        return a;
+    public A getFirst() {
+        return first;
     }
 
-    public B getB() {
-        return b;
+    public B getSecond() {
+        return second;
     }
 
     public static <A, B> Tuple of(A a, B b) {
@@ -26,8 +26,8 @@ public class Tuple<A, B> {
     @Override
     public String toString() {
         return "Tuple{" +
-                "a=" + a +
-                ", b=" + b +
+                "first=" + first +
+                ", second=" + second +
                 '}';
     }
 
@@ -36,11 +36,11 @@ public class Tuple<A, B> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Tuple<?, ?> tuple = (Tuple<?, ?>) o;
-        return Objects.equals(a, tuple.a) && Objects.equals(b, tuple.b);
+        return Objects.equals(first, tuple.first) && Objects.equals(second, tuple.second);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(a, b);
+        return Objects.hash(first, second);
     }
 }
