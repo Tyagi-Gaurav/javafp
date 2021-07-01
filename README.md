@@ -22,6 +22,7 @@ Set of three different types
 | Sum  | Compute the sum of all the elements of the list  |
 | Zip  | Zips together elements of two lists  |
 | Zip3  | Zips together elements of three lists  |
+| Foldl | Left Fold (Folds up the list from left side. The function is applied from the starting value) |
 
 ## Exceptions
 
