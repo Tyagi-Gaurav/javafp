@@ -7,15 +7,17 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
+import java.util.function.BiFunction;
+import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class ListUtils {
 
-    private ListUtils() {}
+    private ListUtils() {
+    }
 
     /**
-     *
      * @param input
      * @return First element of the input
      * @throws IllegalArgumentException if the input is empty or null
@@ -28,7 +30,6 @@ public class ListUtils {
     }
 
     /**
-     *
      * @param input
      * @return Everything after the first element of the input
      * @throws IllegalArgumentException if the input is empty or null
@@ -161,13 +162,20 @@ public class ListUtils {
      * @return List<Triple>
      */
     public static <A, B, C> List<Triple<A, B, C>> zip3(List<A> aList,
-                                                      List<B> bList,
-                                                      List<C> cList) {
+                                                       List<B> bList,
+                                                       List<C> cList) {
         List<Tuple<A, B>> zippedList = zip(aList, bList);
 
         return IntStream.range(0, Math.min(zippedList.size(), cList.size()))
                 .mapToObj(i -> Triple.of(zippedList.get(i).getFirst(),
                         zippedList.get(i).getSecond(), cList.get(i)))
                 .collect(Collectors.toList());
+    }
+
+    public static <T, R> R foldl(List<T> input, R initial, BiFunction<R, T, R> func) {
+        if (input == null || input.size() == 0)
+            return initial;
+
+        return foldl(tailOf(input), func.apply(initial, headOf(input)), func);
     }
 }
