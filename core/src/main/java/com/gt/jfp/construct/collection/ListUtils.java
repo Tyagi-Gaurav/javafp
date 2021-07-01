@@ -8,7 +8,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.function.BiFunction;
-import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -173,7 +172,7 @@ public class ListUtils {
     }
 
     public static <T, R> R foldl(List<T> input, R initial, BiFunction<R, T, R> func) {
-        if (input == null || input.size() == 0)
+        if (input == null || input.isEmpty())
             return initial;
 
         return foldl(tailOf(input), func.apply(initial, headOf(input)), func);

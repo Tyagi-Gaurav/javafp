@@ -25,6 +25,6 @@ class FoldlTest {
     @Test
     void FoldlShouldCheckElementExistence() {
         assertThat(ListUtils.foldl(List.of(1, 4, 4, 4, 5), false, (a, b) -> a || b == 4))
-                .isEqualTo(true);
+                .isTrue();
     }
 }
