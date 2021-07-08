@@ -15,7 +15,7 @@ plugins {
 
 scmVersion {
     tag {
-        prefix = 'javafp'
+        prefix = 'javafp-'
     }
     versionIncrementer 'incrementPatch'
 }
