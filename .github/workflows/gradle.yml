@@ -32,7 +32,7 @@ jobs:
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
 
-  - name: Cleanup Gradle Cache
-    run: |
-      rm -f ~/.gradle/caches/modules-2/modules-2.lock
-      rm -f ~/.gradle/caches/modules-2/gc.properties
+    - name: Cleanup Gradle Cache
+      run: |
+        rm -f ~/.gradle/caches/modules-2/modules-2.lock
+        rm -f ~/.gradle/caches/modules-2/gc.properties
