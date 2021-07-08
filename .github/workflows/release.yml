@@ -1,16 +1,11 @@
 name: Release
 
 on:
-  workflow_run:
-    workflows: ["Java CI with Gradle", "Sonar"]
-    branches: [ master ]
-    types:
-      - completed
+  workflow_dispatch:
 
 jobs:
   release:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@v2
       - name: Set up JDK 11
