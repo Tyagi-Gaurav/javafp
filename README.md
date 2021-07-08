@@ -47,3 +47,12 @@ return value.
           .withFinally(() -> // Handle Finally)
           .run();
   ```
+  
+## Release Process
+
+The project uses [axion-release-plugin](https://github.com/allegro/axion-release-plugin) to manage its releases.
+Each new increment is a patch release as we ensure that we don't break any backward
+compatible releases.
+
+The release is managed via Github action that works only on master after the other
+quality gates and builds have completed.
