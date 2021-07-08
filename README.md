@@ -1,7 +1,7 @@
 # javafp
 [![Gradle CI](https://github.com/Tyagi-Gaurav/javafp/actions/workflows/gradle.yml/badge.svg)](https://github.com/Tyagi-Gaurav/javafp/actions/workflows/gradle.yml)
 [![Sonar](https://github.com/Tyagi-Gaurav/javafp/actions/workflows/sonar.yml/badge.svg)](https://github.com/Tyagi-Gaurav/javafp/actions/workflows/sonar.yml)
-[![Coverage Status](https://coveralls.io/repos/allegro/axion-release-plugin/badge.svg?branch=master)](https://coveralls.io/r/allegro/axion-release-plugin)
+[![Coverage Status]([![codecov](https://codecov.io/gh/Tyagi-Gaurav/javafp/branch/master/graph/badge.svg?token=HTY0U80QKK)](https://codecov.io/gh/Tyagi-Gaurav/javafp))
 
 ## Types
 ### Tuple
