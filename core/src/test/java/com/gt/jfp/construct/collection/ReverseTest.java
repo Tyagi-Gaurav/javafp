@@ -1,10 +1,14 @@
 package com.gt.jfp.construct.collection;
 
+import org.apache.commons.lang3.RandomUtils;
 import org.junit.jupiter.api.Test;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
+import static java.time.Duration.ofMillis;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class ReverseTest {
@@ -20,5 +24,19 @@ class ReverseTest {
                 .isEqualTo(List.of(3, 2, 1));
     }
 
-    //TODO Benchmark test on Reversing a really long list
+    /*
+    Benchmark is 4ms +/- 1ms, but a single shot cold start takes slightly
+    longer.
+     */
+    @Test
+    void shouldReverseARandomLargeListWithinSpecifiedTime() {
+        org.junit.jupiter.api.Assertions.assertTimeout
+                (ofMillis(25), () -> ListUtils.reverse(getListOfSize(50)));
+    }
+
+    private List<Integer> getListOfSize(int size) {
+        return IntStream.generate(RandomUtils::nextInt)
+                .limit(size)
+                .boxed().collect(Collectors.toList());
+    }
 }
