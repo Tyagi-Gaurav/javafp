@@ -10,4 +10,5 @@
 rootProject.name = 'javafp'
 include 'examples'
 include 'core'
+include 'benchmark'
 

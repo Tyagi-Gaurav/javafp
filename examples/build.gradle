@@ -7,7 +7,7 @@ repositories {
 }
 
 dependencies {
-    project(":core")
+    implementation project(":core")
 }
 
 test {
