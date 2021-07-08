@@ -22,10 +22,17 @@ public class FoldlRunner {
 
     @Benchmark
     @BenchmarkMode(Mode.AverageTime)
-    public void benchFoldl(FoldlExecutionPlan plan) {
+    public void benchFoldlAverageTime(FoldlExecutionPlan plan) {
         for (int i = plan.iterations; i > 0; i--) {
             ListUtils.foldl(plan.getInput(), plan.getAccumulator(), plan.getFunc());
         }
     }
 
+    @Benchmark
+    @BenchmarkMode(Mode.SingleShotTime)
+    public void benchFoldlSingleShotTime(FoldlExecutionPlan plan) {
+        for (int i = plan.iterations; i > 0; i--) {
+            ListUtils.foldl(plan.getInput(), plan.getAccumulator(), plan.getFunc());
+        }
+    }
 }

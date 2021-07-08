@@ -22,10 +22,17 @@ public class ReverseRunner {
 
     @Benchmark
     @BenchmarkMode(Mode.AverageTime)
-    public void benchReverse(ReverseExecutionPlan plan) {
+    public void benchReverseAverageTime(ReverseExecutionPlan plan) {
         for (int i = plan.iterations; i > 0; i--) {
             ListUtils.reverse(plan.getInput());
         }
     }
 
+    @Benchmark
+    @BenchmarkMode(Mode.SingleShotTime)
+    public void benchReverseSingle(ReverseExecutionPlan plan) {
+        for (int i = plan.iterations; i > 0; i--) {
+            ListUtils.reverse(plan.getInput());
+        }
+    }
 }
